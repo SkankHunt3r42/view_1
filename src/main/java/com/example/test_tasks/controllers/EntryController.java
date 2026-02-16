@@ -23,7 +23,7 @@ public class EntryController {
        return homeService.sign(dto);
     }
 
-    @PostMapping("/login")
+    @GetMapping("/login")
     public ResponseEntity<Void> login(@RequestBody LogInRequest dto){
 
         return homeService.login(dto);
