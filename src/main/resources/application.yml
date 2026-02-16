@@ -1,0 +1,40 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    username: ${P_USE}
+    password: ${P_PAS}
+    url: jdbc:postgresql://localhost:5432/${P_DB}
+
+  data:
+    redis:
+      host: ${H}
+      port: 6379
+      password: ${R_P}
+      connect-timeout: 2000ms
+
+  flyway:
+    enabled: true
+
+  threads:
+    virtual:
+      enabled: true
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            scope:
+              - email
+            client-id: ${GO_C}
+            client-secret: ${GO_S}
+        provider:
+          google:
+            user-name-attribute: email
+
+server:
+  servlet:
+    session:
+      cookie:
+        same-site: lax

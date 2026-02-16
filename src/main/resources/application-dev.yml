@@ -1,0 +1,12 @@
+spring:
+  mail:
+    port: 2525
+    host: sandbox.smtp.mailtrap.io
+    username: ${M_USE}
+    password: ${M_PAS}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
